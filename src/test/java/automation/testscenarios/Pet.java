@@ -18,17 +18,17 @@ public class Pet {
      * @return
      */
     @DataProvider
-    public Object[][] getDataProvider( ){
+    public Object[][] getDataProviderForPet( ){
         return ExcelDataProvider.getEnabledExcelTests(excelSheetPath
                 ,"post-order","SmokeTestFlag");
     }
 
     /**
-     * shouldBeAbleToPostOrderGetOrderDeleteOrderSuccessfully()
+     * shouldBeAbleToPostOrderGetOrderDeleteOrder()
      * @param testData
      */
-    @Test(dataProvider="getDataProvider")
-    public void shouldBeAbleToPostOrderGetOrderDeleteOrderSuccessfully(Map<String, String> testData) {
+    @Test(dataProvider="getDataProviderForPet")
+    public void shouldBeAbleToPostOrderGetOrderDeleteOrder(Map<String, String> testData) {
         Response response = PetUtilities.postPetOrderEndpoint(testData.get("postOrderStatusCode"),testData.get("postOrderEndPoint"),
                 testData.get("postOrderBody"), testData.get("postOrderJsonSchema"), testData.get("postOrderPetId"),
                 testData.get("postOrderQuantity"),testData.get("postOrderStatus"), testData);
@@ -40,8 +40,12 @@ public class Pet {
                 testData.get("deleteOrderJsonSchema"),testData, postResponse, id);
     }
 
+    /**
+     * shouldBeAbleToPostOrderDeleteOrderGetOrder()
+     * @param testData
+     */
     @Test(dataProvider="getDataProvider")
-    public void shouldBeAbleToPostOrderDeleteOrderGetOrderSuccessfully(Map<String, String> testData) {
+    public void shouldBeAbleToPostOrderDeleteOrderGetOrder(Map<String, String> testData) {
         Response response = PetUtilities.postPetOrderEndpoint(testData.get("postOrderStatusCode"),testData.get("postOrderEndPoint"),
                 testData.get("postOrderBody"), testData.get("postOrderJsonSchema"), testData.get("postOrderPetId"),
                 testData.get("postOrderQuantity"),testData.get("postOrderStatus"), testData);
@@ -49,5 +53,7 @@ public class Pet {
         String id = response.jsonPath().getString("id");
         PetUtilities.deleteOrderEndpoint(testData.get("deleteOrderStatusCode"),testData.get("deleteOrderEndPoint"),
                 testData.get("deleteOrderJsonSchema"),testData, postResponse, id);
+        PetUtilities.getOrderByIdEndpoint(testData.get("getOrderStatusCodeAfterDeletion"),testData.get("getOrderEndPoint"),
+                testData.get("getOrderJsonSchemaAfterDeletion"),testData, postResponse, id);
     }
 }

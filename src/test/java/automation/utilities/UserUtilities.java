@@ -61,6 +61,9 @@ public class UserUtilities {
             Assert.assertEquals(response.jsonPath().getString("lastName"), testData.get("lastName"));
             Assert.assertEquals(response.jsonPath().getString("email"), testData.get("email"));
             Assert.assertEquals(response.jsonPath().getString("phone"), testData.get("phone"));
+        } else if(testData.get("getDeletedUserStatusCode").equals("404")){
+            Assert.assertEquals(response.jsonPath().getString("type"), "error");
+            Assert.assertEquals(response.jsonPath().getString("message"),"User not found");
         }
         return response;
     }

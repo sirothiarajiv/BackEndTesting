@@ -88,7 +88,11 @@ public class PetUtilities {
             Assert.assertEquals(response.jsonPath().getInt("petId"), postResponseObject.get("petId"));
             Assert.assertEquals(response.jsonPath().getInt("quantity"), postResponseObject.get("quantity"));
             Assert.assertEquals(response.jsonPath().getString("status"), postResponseObject.get("status"));
+        } else if (testData.get("getOrderStatusCodeAfterDeletion").equals("404")){
+            Assert.assertEquals(response.jsonPath().getString("type"),"error");
+            Assert.assertEquals(response.jsonPath().getString("message"),"Order not found");
         }
+
         return response;
     }
 

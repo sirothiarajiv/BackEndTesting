@@ -17,17 +17,17 @@ public class User {
      * @return
      */
     @DataProvider
-    public Object[][] getDataProviderUser(){
+    public Object[][] getDataProviderForUser(){
         return ExcelDataProvider.getEnabledExcelTests(excelSheetPath
                 ,"user","SmokeTestFlag");
     }
 
     /**
-     * shouldBeAbleToPostUserGetUserSuccessfully()
+     * shouldBeAbleToPostUserGetUser()
      * @param testData
      */
-    @Test(dataProvider="getDataProviderUser")
-    public void shouldBeAbleToPostUserGetUserSuccessfully(Map<String, String> testData) {
+    @Test(dataProvider="getDataProviderForUser")
+    public void shouldBeAbleToPostUserGetUser(Map<String, String> testData) {
          UserUtilities.postUserEndpoint(testData.get("postUserStatusCode"),testData.get("postUserEndPoint"),
                 testData.get("postUserBody"), testData.get("postUserJsonSchema"), testData);
          UserUtilities.getUserByUsernameEndpoint(testData.get("getUserStatusCode"),testData.get("getUserEndPoint"),
@@ -35,16 +35,16 @@ public class User {
     }
 
     /**
-     * shouldBeAbleToPostUserDeleteUserGetUserSuccessfully()
+     * shouldBeAbleToPostUserDeleteUserGetUser()
      * @param testData
      */
     @Test(dataProvider="getDataProviderUser")
-    public void shouldBeAbleToPostUserDeleteUserGetUserSuccessfully(Map<String, String> testData){
+    public void shouldBeAbleToPostUserDeleteUserGetUser(Map<String, String> testData){
      UserUtilities.postUserEndpoint(testData.get("postUserStatusCode"),testData.get("postUserEndPoint"),
                 testData.get("postUserBody"), testData.get("postUserJsonSchema"), testData);
      UserUtilities.deleteUserEndpoint(testData.get("deleteUserStatusCode"),testData.get("deleteUserEndPoint"),
                 testData.get("deleteUserJsonSchema"),testData);
-//     UserUtilities.getUserByUsernameEndpoint(testData.get("getUserStatusCodeAfterDeletion"),testData.get("getUserEndPoint"),
-//                testData.get("deleteUserJsonSchema"),testData.get("username"),testData);
+     UserUtilities.getUserByUsernameEndpoint(testData.get("getDeletedUserStatusCode"),testData.get("getUserEndPoint"),
+                testData.get("getDeletedUserJsonSchema"),testData.get("username"),testData);
     }
 }
