@@ -1,0 +1,55 @@
+
+name: Pet Store API Automation 
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ '*' ]
+env:
+  BackEndTesting  RESULTS_DIRECTORY: ./.github/workflows
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 17
+      uses: actions/setup-java@v1
+      with:
+        java-version: 17
+
+    - name: Build project with Maven
+      run: mvn clean install
+      
+    - name: Cache local Maven repository
+      uses: actions/cache@v2
+      with:
+            path: ~/.m2/repository
+            key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+            restore-keys: |
+              ${{ runner.os }}-maven-
+
+
+  test_backend:
+    name:  Automation
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Run Backend Tests
+        run: |
+          mvn test -DSuit= "src/test/resources/xml-suit/run.xml"
+
+      - name:  Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: PetStore/build/reports/tests/test
