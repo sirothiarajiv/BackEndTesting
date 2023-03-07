@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24aa9991-d7a9-4474-8649-416cd7d0883f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/automation/testscenarios/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/automation/testscenarios/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/automation/utilities/PetUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/automation/utilities/PetUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/xml-suit/run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/xml-suites/run.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/automation/testscenarios/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/automation/testscenarios/Pet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/automation/utilities/PetUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/automation/utilities/PetUtilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/xml-suit/run.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
