@@ -25,9 +25,6 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Change wrapper permissions
-        run: chmod +x ./mvnw
-
       - name: Cache local Maven repository
         uses: actions/cache@v2
         with:
@@ -48,7 +45,7 @@ jobs:
 
       - name: Run Backend Tests
         run: |
-          ./mvnw clean install 
+          mvn clean install 
 
       - name:  Upload Artifacts
         uses: actions/upload-artifact@v2
