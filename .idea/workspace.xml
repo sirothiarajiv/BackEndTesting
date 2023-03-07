@@ -5,26 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24aa9991-d7a9-4474-8649-416cd7d0883f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/ci.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/automation/testscenarios/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/automation/testscenarios/Pet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/automation/testscenarios/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/automation/testscenarios/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/automation/utilities/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/automation/utilities/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/automation/utilities/PetUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/automation/utilities/PetUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/automation/utilities/UserUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/automation/utilities/UserUtilities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/data/excel-data.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/xml-suit/run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/xml-suit/run.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/xml-suit/run.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/xml-suites/run.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/automation/testscenarios/Pet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/automation/testscenarios/Pet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/automation/testscenarios/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/automation/testscenarios/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/automation/utilities/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/automation/utilities/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/automation/utilities/ExcelDataProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/automation/utilities/ExcelDataProvider.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/automation/utilities/PetUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/automation/utilities/PetUtilities.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/automation/utilities/UserUtilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/automation/utilities/UserUtilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/xml-suit/run.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,18 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/java/data&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/raramuri/Desktop/APITesting/BackEndTesting/src/main/resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
       <recent name="$PROJECT_DIR$/src/test/java/data" />
       <recent name="$PROJECT_DIR$/src/test" />
       <recent name="$PROJECT_DIR$/src/test/java" />
@@ -68,7 +71,7 @@
       <command value="mvn clean" />
     </option>
   </component>
-  <component name="RunManager" selected="TestNG./Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/xml-suit/run.xml">
+  <component name="RunManager" selected="TestNG./Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/xml-suites/run.xml">
     <configuration name="Pet" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="BackEndTesting" />
       <extension name="coverage">
@@ -122,16 +125,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="/Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/run.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="BackEndTesting" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/run.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="/Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/xml-suit/run.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="BackEndTesting" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/xml-suit/run.xml" />
@@ -142,20 +135,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="/Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/xml-suites/run.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="BackEndTesting" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/src/test/resources/xml-suites/run.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="TestNG./Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/xml-suites/run.xml" />
       <item itemvalue="TestNG.Pet" />
       <item itemvalue="TestNG.Pet.shouldBeAbleToPostOrderDeleteOrderGetOrder" />
       <item itemvalue="TestNG.User.shouldBeAbleToPostUserDeleteUserGetUser" />
-      <item itemvalue="TestNG./Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/run.xml" />
       <item itemvalue="TestNG./Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/xml-suit/run.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG./Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/xml-suites/run.xml" />
         <item itemvalue="TestNG./Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/xml-suit/run.xml" />
         <item itemvalue="TestNG.User.shouldBeAbleToPostUserDeleteUserGetUser" />
         <item itemvalue="TestNG.Pet.shouldBeAbleToPostOrderDeleteOrderGetOrder" />
         <item itemvalue="TestNG.Pet" />
-        <item itemvalue="TestNG./Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/resources/run.xml" />
       </list>
     </recent_temporary>
   </component>

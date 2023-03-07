@@ -2,7 +2,6 @@ package automation.testscenarios;
 
 import automation.utilities.ExcelDataProvider;
 import automation.utilities.PetUtilities;
-import automation.utilities.UserUtilities;
 import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

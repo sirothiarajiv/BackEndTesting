@@ -1,16 +1,11 @@
 package automation.utilities;
 
-import io.restassured.http.Headers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
-
-import javax.mail.Header;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import static automation.utilities.Constants.baseURL;
 import static io.restassured.RestAssured.given;
