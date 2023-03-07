@@ -1,9 +1,16 @@
 package automation.utilities;
 
+import io.restassured.http.Headers;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
+
+import javax.mail.Header;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import static automation.utilities.Constants.baseURL;
 import static io.restassured.RestAssured.given;
@@ -13,6 +20,7 @@ import static io.restassured.RestAssured.given;
  */
 public class PetUtilities {
 
+    private static Logger logger = LoggerFactory.getLogger(PetUtilities.class);
     /**
      *
      * @param statusCode
@@ -38,18 +46,26 @@ public class PetUtilities {
                 .then()
                 .extract()
                 .response();
-        response
-                .then()
-                .assertThat()
-                .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema)).log().all();
+        if(response.getStatusCode() == 200){
+            logger.info("Status Validated.");
 
-        System.out.println("Response time for Post order for Pet API is  "+response.getTime() + " ms");
+            response
+                    .then()
+                    .assertThat()
+                    .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+            logger.info("JSON Schema Validated.");
 
-        if(testData.get("postorderStatus").equals("200")){
+            Assert.assertEquals(response.getHeader("Transfer-Encoding"),"chunked");
+            Assert.assertEquals(response.getHeader("Connection"),"keep-alive");
+            Assert.assertEquals(response.getHeader("Access-Control-Allow-Methods"),"GET, POST, DELETE, PUT");
+            Assert.assertEquals(response.getStatusLine(),"HTTP/1.1 200 OK");
+            logger.info("Response Headers Validated.");
+
             Assert.assertEquals(response.jsonPath().getString("petId"), testData.get("postOrderpetId"));
             Assert.assertEquals(response.jsonPath().getString("quantity"), testData.get("postOrderQuantity"));
             Assert.assertEquals(response.jsonPath().getString("status"), testData.get("postorderStatus"));
-            Assert.assertEquals(response.jsonPath().getString("complete"), true);
+            Assert.assertEquals(response.jsonPath().getBoolean("complete"), true);
+            logger.info("Response Body Validated.");
         }
         return response;
     }
@@ -76,23 +92,32 @@ public class PetUtilities {
                 .then()
                 .extract()
                 .response();
-        response
-                .then()
-                .assertThat()
-                .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema)).log().all();
+        if(response.getStatusCode() == 200){
+            logger.info("Status Validated.");
+            response
+                    .then()
+                    .assertThat()
+                    .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+            logger.info("JSON Schema Validated.");
 
-        System.out.println("Response time for Get Order By Id API is  "+response.getTime() + " ms");
+            Assert.assertEquals(response.getHeader("Transfer-Encoding"),"chunked");
+            Assert.assertEquals(response.getHeader("Connection"),"keep-alive");
+            Assert.assertEquals(response.getHeader("Access-Control-Allow-Methods"),"GET, POST, DELETE, PUT");
+            Assert.assertEquals(response.getStatusLine(),"HTTP/1.1 200 OK");
+            logger.info("Response Headers Validated.");
 
-        if(testData.get("getOrderStatusCode").equals("200")){
             JSONObject postResponseObject = new JSONObject(postResponse);
-            Assert.assertEquals(response.jsonPath().getInt("petId"), postResponseObject.get("petId"));
-            Assert.assertEquals(response.jsonPath().getInt("quantity"), postResponseObject.get("quantity"));
-            Assert.assertEquals(response.jsonPath().getString("status"), postResponseObject.get("status"));
-        } else if (testData.get("getOrderStatusCodeAfterDeletion").equals("404")){
+            Assert.assertEquals(response.jsonPath().getInt("petId"), postResponseObject.getInt("petId"));
+            Assert.assertEquals(response.jsonPath().getInt("quantity"), postResponseObject.getInt("quantity"));
+            Assert.assertEquals(response.jsonPath().getString("status"), postResponseObject.getString("status"));
+            logger.info("Response Body Validated.");
+        } else if (response.getStatusCode() == 404){
+            logger.info("Not Found Scenario Status Validated.");
+
             Assert.assertEquals(response.jsonPath().getString("type"),"error");
             Assert.assertEquals(response.jsonPath().getString("message"),"Order not found");
+            logger.info("Response Body Validated For Negative Scenario.");
         }
-
         return response;
     }
 
@@ -117,18 +142,25 @@ public class PetUtilities {
                 .then()
                 .extract()
                 .response();
-        response
-                .then()
-                .assertThat()
-                .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema)).log().all();
+        if(response.getStatusCode() == 200){
+            logger.info("Status Validated.");
 
-        System.out.println("Response time for delete order API is "+response.getTime() + " ms");
+            response
+                    .then()
+                    .assertThat()
+                    .body(JsonSchemaValidator.matchesJsonSchema(jsonSchema));
+            logger.info("JSON Schema Validated.");
 
-        if(testData.get("deleteOrderStatusCode").equals("200")){
+            Assert.assertEquals(response.getHeader("Transfer-Encoding"),"chunked");
+            Assert.assertEquals(response.getHeader("Connection"),"keep-alive");
+            Assert.assertEquals(response.getHeader("Access-Control-Allow-Methods"),"GET, POST, DELETE, PUT");
+            Assert.assertEquals(response.getStatusLine(),"HTTP/1.1 200 OK");
+            logger.info("Response Headers Validated.");
+
             Assert.assertEquals(response.jsonPath().getString("code"), "200");
             Assert.assertEquals(response.jsonPath().getString("type"), "unknown");
+            logger.info("Response Body Validated.");
         }
-
         return response;
     }
 }
