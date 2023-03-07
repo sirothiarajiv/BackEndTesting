@@ -46,9 +46,4 @@ jobs:
       - name: Run Backend Tests
         run: |
           mvn clean install 
-
-      - name:  Upload Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: artifacts
-          path: Store-Controller/build/reports/tests/test
+          
