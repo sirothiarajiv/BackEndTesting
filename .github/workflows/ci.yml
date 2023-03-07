@@ -24,7 +24,7 @@ jobs:
         java-version: 14
 
     - name: Build project with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn clean install
 
 
   test_backend:
@@ -38,7 +38,7 @@ jobs:
 
       - name: Run Backend Tests
         run: |
-          ./mvnw clean install 
+          mvn test -Dtest="src/test/resources/xml-suit/run.xml"
 
       - name:  Upload Artifacts
         uses: actions/upload-artifact@v2
