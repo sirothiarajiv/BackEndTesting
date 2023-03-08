@@ -24,6 +24,8 @@ jobs:
           distribution: 'temurin'
       - name: Check out code
         uses: actions/checkout@v2
+      - name: build maven
+        run: mvn -B package --file pom.xml
 
       - name: Cache local Maven repository
         uses: actions/cache@v2
@@ -45,5 +47,4 @@ jobs:
 
       - name: Run Backend Tests
         run: |
-          mvn clean install 
-          
+          mvn clean test 
