@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="/Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/java/automation/testscenarios/User.java"><classes><class name="automation.testscenarios.User"><methods><include name="shouldBeAbleToPostUserGetUserSuccessfully"/><include name="shouldBeAbleToPostUserDeleteUserGetUserSuccessfully"/></methods></class></classes></test></suite>

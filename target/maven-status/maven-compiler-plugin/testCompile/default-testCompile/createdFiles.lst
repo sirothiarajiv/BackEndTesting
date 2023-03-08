@@ -1,0 +1,6 @@
+automation/testscenarios/User.class
+automation/utilities/Constants.class
+automation/utilities/UserUtilities.class
+automation/testscenarios/Pet.class
+automation/utilities/ExcelDataProvider.class
+automation/utilities/PetUtilities.class

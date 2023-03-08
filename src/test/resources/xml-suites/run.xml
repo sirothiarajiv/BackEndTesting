@@ -1,0 +1,18 @@
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/raramuri/Desktop/APITesting/BackEndTesting/src/test/java/automation/testscenarios">
+        <classes>
+            <class name="automation.testscenarios.Pet">
+                <methods>
+                    <include name="shouldBeAbleToPostOrderGetOrderDeleteOrder"/>
+                    <include name="shouldBeAbleToPostOrderDeleteOrderGetOrder"/>
+                </methods>
+            </class>
+            <class name="automation.testscenarios.User">
+                <methods>
+                    <include name="shouldBeAbleToPostUserGetUser"/>
+                    <include name="shouldBeAbleToPostUserDeleteUserGetUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
